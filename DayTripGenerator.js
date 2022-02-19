@@ -19,10 +19,10 @@ function randomNumberGen (maxArrayValue) {
     let randomNumber = Math.random() * maxArrayValue;
     return Math.floor(randomNumber);
 };
-randomNumberGen(5)
+
 //Create function that uses random num generator to select random items in each array
 function randomArrayGen (tripChoices) {
-    randomTripChoice = randomNumberGen(tripChoices.length);
+    let randomTripChoice = randomNumberGen (tripChoices.length);
     return tripChoices[randomTripChoice];
 };
 
@@ -41,5 +41,12 @@ function createRandomTrip (){
 
     return tripInitialSelection;
 };
-//test
-console.log(createRandomTrip());
+
+//Create function that displays the array selections in a sentence.
+function showTripSelections () {
+    let randomizedTripArray = createRandomTrip();
+    let tripTextDisplay = `Your day trip has been generated! You will travel to ${randomizedTripArray[0]}. You will eat at ${randomizedTripArray[1]}. Your mode of transportation will be ${randomizedTripArray[2]}. Your day's entertainment will be ${randomizedTripArray[3]}.`;
+    return tripTextDisplay
+};
+
+console.log(showTripSelections());
