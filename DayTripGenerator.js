@@ -11,8 +11,8 @@
 
 let destinations = ['Cool Springs', 'East Nashville', 'Broadway', 'Spring Hill', 'Green Hills'];
 let restaurants = ['Chauhan', 'Emmy Squared', 'International Market', 'Tansuo', 'House of Cards'];
-let transportation = ['Automobile', 'Bus', 'Uber', 'Lyft'];
-let entertainment = ['Honkey Tonks', 'Magic Show', 'Grand ol Opry', 'Art Museum'];
+let transportation = ['automobile', 'bus', 'Uber', 'Lyft'];
+let entertainment = ['honkey tonk', 'magic show', 'Grand ol Opry show', 'musical'];
 
 //Create random number generator to use for arrays -- will use array.length for maxArrayValue
 function randomNumberGen (maxArrayValue) {
@@ -41,12 +41,33 @@ function createRandomTrip (){
 
     return tripInitialSelection;
 };
-
+let iTrip = createRandomTrip()
+console.log(iTrip)
 //Create function that displays the array selections in a sentence.
-function showTripSelections () {
-    let randomizedTripArray = createRandomTrip();
-    let tripTextDisplay = `Your day trip has been generated! You will travel to ${randomizedTripArray[0]}. You will eat at ${randomizedTripArray[1]}. Your mode of transportation will be ${randomizedTripArray[2]}. Your day's entertainment will be ${randomizedTripArray[3]}.`;
+function showTripSelections (randomizedTripArray) {
+    randomizedTripArray = iTrip;
+    let tripTextDisplay = `Your day trip has been generated! You will travel to ${randomizedTripArray[0]}. You will eat at ${randomizedTripArray[1]}. You will travel by ${randomizedTripArray[2]}. Your day's entertainment will be going to a ${randomizedTripArray[3]}.`;
     return tripTextDisplay
 };
 
 console.log(showTripSelections());
+
+//Create function that re-selects from arrays.
+
+function tripReselect (newChoice){
+    let reselect = iTrip;
+    if(newChoice == destinations){
+        reselect[0] = randomArrayGen(destinations);
+    } else if (newChoice == restaurants){
+        reselect[1] = randomArrayGen(restaurants);
+    } else if (newChoice == transportation){
+        reselect[2] = randomArrayGen(transportation);
+    } else if (newChoice == entertainment){
+        reselect[3] = randomArrayGen(entertainment);
+    }
+    return reselect;
+}
+
+console.log(tripReselect(destinations))
+
+//Create function that allows user to input what to reselect.
