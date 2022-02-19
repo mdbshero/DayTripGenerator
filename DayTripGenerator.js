@@ -13,3 +13,10 @@ let destinations = ['Cool Springs', 'East Nashville', 'Broadway', 'Spring Hill',
 let restaurants = ['Chauhan', 'Emmy Squared', 'International Market', 'Tansuo', 'House of Cards'];
 let transportation = ['Automobile', 'Bus', 'Uber', 'Lyft'];
 let entertainment = ['Honkey Tonks', 'Magic Show', 'Grand ol Opry', 'Art Museum'];
+
+//Create random number generator to use for arrays
+function randomNumberGen (maxArrayValue) {
+    let randomNumber = Math.random(maxArrayValue);
+    return Math.floor(randomNumber);
+};
+
