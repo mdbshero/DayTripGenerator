@@ -14,9 +14,32 @@ let restaurants = ['Chauhan', 'Emmy Squared', 'International Market', 'Tansuo', 
 let transportation = ['Automobile', 'Bus', 'Uber', 'Lyft'];
 let entertainment = ['Honkey Tonks', 'Magic Show', 'Grand ol Opry', 'Art Museum'];
 
-//Create random number generator to use for arrays
+//Create random number generator to use for arrays -- will use array.length for maxArrayValue
 function randomNumberGen (maxArrayValue) {
-    let randomNumber = Math.random(maxArrayValue);
+    let randomNumber = Math.random() * maxArrayValue;
     return Math.floor(randomNumber);
 };
+randomNumberGen(5)
+//Create function that uses random num generator to select random items in each array
+function randomArrayGen (tripChoices) {
+    randomTripChoice = randomNumberGen(tripChoices.length);
+    return tripChoices[randomTripChoice];
+};
 
+//Randomized day trip array creation.
+function createRandomTrip (){
+    let randDestination = randomArrayGen(destinations);
+    let randRestaurants = randomArrayGen(restaurants);
+    let randTransportation = randomArrayGen(transportation);
+    let randEntertainment = randomArrayGen(entertainment);
+
+    let tripInitialSelection = [];
+    tripInitialSelection.push(randDestination);
+    tripInitialSelection.push(randRestaurants);
+    tripInitialSelection.push(randTransportation);
+    tripInitialSelection.push(randEntertainment);
+
+    return tripInitialSelection;
+};
+//test
+console.log(createRandomTrip());
