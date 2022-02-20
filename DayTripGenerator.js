@@ -41,8 +41,8 @@ function createRandomTrip (){
 
     return tripInitialSelection;
 };
-let iTrip = createRandomTrip()
-console.log(iTrip)
+let iTrip = createRandomTrip();
+console.log(iTrip);
 //Create function that displays the array selections in a sentence.
 function showTripSelections (randomizedTripArray) {
     randomizedTripArray = iTrip;
@@ -52,22 +52,32 @@ function showTripSelections (randomizedTripArray) {
 
 console.log(showTripSelections());
 
-//Create function that re-selects from arrays.
+//Create function that prompts user if they want to re-select from arrays.
 
 function tripReselect (newChoice){
     let reselect = iTrip;
-    if(newChoice == destinations){
-        reselect[0] = randomArrayGen(destinations);
-    } else if (newChoice == restaurants){
-        reselect[1] = randomArrayGen(restaurants);
-    } else if (newChoice == transportation){
-        reselect[2] = randomArrayGen(transportation);
-    } else if (newChoice == entertainment){
-        reselect[3] = randomArrayGen(entertainment);
+    newChoice = prompt("Which selection would you like to change? destinations, restaurants, transportation, entertainment, or none").toLowerCase();
+    switch(newChoice){
+        case "destinations":
+            reselect[0] = randomArrayGen(destinations);
+            break;
+        case "restaurants":
+            reselect[1] = randomArrayGen(restaurants);
+            break;
+        case "transportation":
+            reselect[2] = randomArrayGen(transportation);
+            break;
+        case "entertainment":
+            reselect[3] = randomArrayGen(entertainment);
+            break;
+        case "none":
+            break;
+        default:
+            tripReselect(newChoice);
     }
     return reselect;
 }
 
-console.log(tripReselect(destinations))
+console.log(tripReselect(destinations));
 
 //Create function that allows user to input what to reselect.
