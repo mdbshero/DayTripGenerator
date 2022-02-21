@@ -14,7 +14,7 @@ let restaurants = ['Chauhan', 'Emmy Squared', 'International Market', 'Tansuo', 
 let transportation = ['automobile', 'bus', 'Uber', 'Lyft', 'bike', 'train', 'helicoptor'];
 let entertainment = ['honkey tonk', 'magic show', 'Grand ol Opry show', 'musical', 'park', 'sporting event', 'music show', 'museum'];
 
-//Create random number generator to use for arrays -- will use array.length for maxArrayValue
+//Create random number generator to use for arrays -- will use "array".length for maxArrayValue
 function randomNumberGen (maxArrayValue) {
     let randomNumber = Math.random() * maxArrayValue;
     return Math.floor(randomNumber);
@@ -41,7 +41,7 @@ function createRandomTrip (){
 
     return tripInitialSelection;
 };
-let iTrip = createRandomTrip();
+let iTrip = createRandomTrip(); //captures inital trip creation
 
 //Create function that displays the array selections in a sentence.
 function showTripSelections (randomizedTripArray) {
@@ -86,15 +86,23 @@ function userQuery (userPrompt){
     switch(userPrompt){
         case "no":
             alert (`Your final trip selections are as follows. ${showTripSelectionsInsert}`);
+            console.log(showTripSelectionsInsert)
             break;
         case "yes":
             let showTripSelectionsInsertNew = tripReselect();
-            alert (`Your final trip selections are as follows. ${showTripSelectionsInsertNew}`)
+            alert (`Your new trip selections are as follows. ${showTripSelectionsInsertNew}`)
         default:
             userQuery(userPrompt);
     }
 }
 
-userQuery()
 
-//Creat a function that introduces the program.
+
+//Creat a function that introduces and runs the program.
+
+function runAll (){
+    alert ("Welcome to your random day trip generator!");
+    userQuery();
+};
+
+runAll()
