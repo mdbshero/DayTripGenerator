@@ -1,2 +1,3 @@
 # DayTripGenerator
 First project- Day Trip Generator
+This trip generator allows the user to obtain a randomly selected day trip that gives them a destination, restuarant, mode of transportation and form of entertainment. The user is asked if they want to change any choices and are able to select any of the above to be randomly regenerated. They can then select that they are satisfied with their choices and receive a final trip report.
