@@ -54,21 +54,21 @@ function showTripSelections (randomizedTripArray) {
 
 function tripReselect (newChoice){
     let reselect = iTrip;
-    newChoice = prompt("Which selection would you like to change? destinations, restaurants, transportation, entertainment, or none").toLowerCase();
+    newChoice = prompt("Which selection would you like to change? Select 1 for destinations, 2 for restaurants, 3 for transportation, 4 for entertainment, or 5 for none").toLowerCase();
     switch(newChoice){
-        case "destinations":
+        case "1":
             reselect[0] = randomArrayGen(destinations);
             break;
-        case "restaurants":
+        case "2":
             reselect[1] = randomArrayGen(restaurants);
             break;
-        case "transportation":
+        case "3":
             reselect[2] = randomArrayGen(transportation);
             break;
-        case "entertainment":
+        case "4":
             reselect[3] = randomArrayGen(entertainment);
             break;
-        case "none":
+        case "5":
             break;
         default:
             tripReselect(newChoice);
