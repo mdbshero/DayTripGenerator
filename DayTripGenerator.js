@@ -47,7 +47,7 @@ let iTrip = createRandomTrip(); //captures inital trip creation
 function showTripSelections (randomizedTripArray) {
     randomizedTripArray = iTrip;
     let tripTextDisplay = `You will travel to ${randomizedTripArray[0]}. You will eat at ${randomizedTripArray[1]}. You will travel by ${randomizedTripArray[2]}. Your day's entertainment will be going to a ${randomizedTripArray[3]}.`;
-    return tripTextDisplay
+    return tripTextDisplay;
 };
 
 //Create function that prompts user what to re-select from arrays.
@@ -73,7 +73,7 @@ function tripReselect (newChoice){
         default:
             tripReselect(newChoice);
     }
-    reselect = (showTripSelections())
+    reselect = (showTripSelections());
     return reselect;
 }
 
@@ -86,11 +86,11 @@ function userQuery (userPrompt){
     switch(userPrompt){
         case "no":
             alert (`Your final trip selections are as follows. ${showTripSelectionsInsert}`);
-            console.log(showTripSelectionsInsert)
+            console.log(showTripSelectionsInsert);
             break;
         case "yes":
             let showTripSelectionsInsertNew = tripReselect();
-            alert (`Your new trip selections are as follows. ${showTripSelectionsInsertNew}`)
+            alert (`Your new trip selections are as follows. ${showTripSelectionsInsertNew}`);
         default:
             userQuery(userPrompt);
     }
@@ -105,4 +105,4 @@ function runAll (){
     userQuery();
 };
 
-runAll()
+runAll();
