@@ -82,12 +82,11 @@ function tripReselect (newChoice){
 
 function userQuery (userPrompt){
     let showTripSelectionsInsert = showTripSelections();
-    let userHappy = true
-    while (userHappy === false){
     userPrompt = prompt(`Your current trip plan is as follows: ${showTripSelectionsInsert} Would you like to make any changes? Please enter yes or no.`).toLowerCase();
     switch(userPrompt){
         case "no":
-            userHappy = true;
+            alert (`Your final trip selections are as follows. ${showTripSelectionsInsert}`);
+            console.log(showTripSelectionsInsert)
             break;
         case "yes":
             let showTripSelectionsInsertNew = tripReselect();
@@ -96,16 +95,14 @@ function userQuery (userPrompt){
             userQuery(userPrompt);
     }
 }
-return alert (`Your final trip selections are as follows. ${showTripSelectionsInsert}`), console.log(showTripSelectionsInsert)
-}
 
 
 
 //Creat a function that introduces and runs the program.
 
-function runDayTripPlanner (){
+function runAll (){
     alert ("Welcome to your random day trip generator!");
     userQuery();
 };
 
-runDayTripPlanner()
+runAll()
